@@ -22,11 +22,16 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 
 	<!-- Featurd tx -->
+	<?php if( get_field('featured_text') ): ?>
 	<div id="featured">
-		<div class="container"><h1 class="featured_text text-center"><?php the_field('featured_text') ?></h1></div>
+		<div class="container">
+			
+				<h1 class="featured_text text-center"><?php the_field('featured_text') ?></h1>	
+		</div>
 		
 	</div>
-	
+	<?php endif; ?>
+
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
 		<div class="row">
@@ -40,22 +45,52 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 					<?php get_template_part( 'loop-templates/content', 'single' ); ?>
 
-						<?php understrap_post_nav(); ?>
+						<div class="kontejner2">
+							<?php understrap_post_nav(); ?>
+						</div>
 
-					<?php
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
-					?>
+				
 
 				<?php endwhile; // end of the loop. ?>
 
 			</main><!-- #main -->
-
-		
+			<div id="magic" class="kontejner2 text-center my-5 ">
+				<button type="button" class="btn btn-primary">More magic</button>
+			</div>
+			
 
 	</div><!-- .row -->
+
+	<div class="kontejner2">
+					<?php
+						//argumenti
+						$args = array(
+							'post_type' => 'post',
+							'posts_per_page' => 1,
+																	
+						);
+						//novi query
+						$query = new WP_Query($args);
+					while($query->have_posts()) : $query->the_post();
+					?>
+					
+					
+						<div class="row">
+							<div class="col-md-6">
+								<?php the_post_thumbnail() ?>
+							</div>
+							<div class="col-md-6">
+								<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+								<p><?php the_excerpt() ?></p>
+							</div>
+						</div>
+						
+						
+					
+					
+					
+					<?php endwhile; wp_reset_query(); ?>
+				</div>
 		<div id="newsletter">
 				<?php  dynamic_sidebar('newsletter')  ?>
 

@@ -10832,8 +10832,8 @@ h2 a {
   text-align: center;
   /*padding: 40px 50px;*/
   background-size: cover !important;
-  padding: 10rem 0;
-  background-position: center center !important;
+  padding: 14rem 0;
+  background-position: top center !important;
   background: -webkit-gradient(linear, left top, left bottom, from(red), to(yellow));
   background: linear-gradient(red, yellow); }
 
@@ -10866,3 +10866,10 @@ h2 a {
   background: #fafafa;
   color: #555;
   padding: 2rem 0; }
+
+.quote {
+  width: 30%;
+  float: left;
+  padding: 2rem;
+  text-align: center;
+  color: #dc4ba3; }

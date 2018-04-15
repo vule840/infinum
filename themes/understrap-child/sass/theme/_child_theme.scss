@@ -25,8 +25,8 @@ h2 a {
   text-align: center;
   /*padding: 40px 50px;*/
   background-size: cover !important;
-    padding: 10rem 0;
-  background-position: center center !important;
+    padding: 14rem 0;
+  background-position: top center !important;
   background: linear-gradient(red, yellow);
 }
 .header-wrap h1.entry-title {
@@ -60,4 +60,12 @@ h2 a {
     color: #555;
     padding: 2rem 0;
 	
+}
+
+.quote {
+	    width: 30%;
+    float: left;
+    padding: 2rem;
+    text-align: center;
+    color: $pink;
 }
