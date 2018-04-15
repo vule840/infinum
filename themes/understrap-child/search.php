@@ -17,8 +17,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 		<div class="row">
 
-			<!-- Do the left sidebar check and opens the primary div -->
-			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
+			
 
 			<main class="site-main" id="main">
 
@@ -32,10 +31,13 @@ $container   = get_theme_mod( 'understrap_container_type' );
 								'<span>' . get_search_query() . '</span>' ); ?></h1>
 
 					</header><!-- .page-header -->
-
+					
+					<div class="row">
+						
+					
 					<?php /* Start the Loop */ ?>
 					<?php while ( have_posts() ) : the_post(); ?>
-
+						<div class="col-md-4">
 						<?php
 						/**
 						 * Run the loop for the search to output the results.
@@ -44,7 +46,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 						 */
 						get_template_part( 'loop-templates/content', 'search' );
 						?>
-
+						</div>
 					<?php endwhile; ?>
 
 				<?php else : ?>
@@ -52,14 +54,13 @@ $container   = get_theme_mod( 'understrap_container_type' );
 					<?php get_template_part( 'loop-templates/content', 'none' ); ?>
 
 				<?php endif; ?>
-
+				</div>
 			</main><!-- #main -->
 
 			<!-- The pagination component -->
 			<?php understrap_pagination(); ?>
 
-		<!-- Do the right sidebar check -->
-		<?php get_template_part( 'global-templates/right-sidebar-check' ); ?>
+		
 
 	</div><!-- .row -->
 
