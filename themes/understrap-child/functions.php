@@ -19,6 +19,7 @@ function theme_enqueue_styles() {
     wp_enqueue_script( 'jquery');
 	wp_enqueue_script( 'popper-scripts', get_template_directory_uri() . '/js/popper.min.js', array(), false);
     wp_enqueue_script( 'child-understrap-scripts', get_stylesheet_directory_uri() . '/js/child-theme.min.js', array(), $the_theme->get( 'Version' ), true );
+    
     wp_enqueue_script( 'skripte', get_stylesheet_directory_uri() . '/js/skripte.js', array(), $the_theme->get( 'Version' ), true );
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
@@ -124,3 +125,12 @@ function my_blockquote($atts, $content) {
         .'<blockquote class="lead">'.$content.'</blockquote>'.PHP_EOL
         .'</div>';
 }      
+
+// Send Gill to get paint
+add_action( 'loop_start' , 'send_gill_to_get_paint', 10 , 2 );
+function send_gill_to_get_paint(  ) {
+  // If $gill_has_keys and $gill_has_car are both true
+  
+    echo 'Gill, please go to the store and get some paint. Thank you!';
+  
+}
