@@ -19,7 +19,7 @@ function theme_enqueue_styles() {
     wp_enqueue_script( 'jquery');
 	wp_enqueue_script( 'popper-scripts', get_template_directory_uri() . '/js/popper.min.js', array(), false);
     wp_enqueue_script( 'child-understrap-scripts', get_stylesheet_directory_uri() . '/js/child-theme.min.js', array(), $the_theme->get( 'Version' ), true );
-    
+    wp_enqueue_script( 'owl-carusel', get_stylesheet_directory_uri() . '/js/owl.carousel.js', array(), $the_theme->get( 'Version' ), true );
     wp_enqueue_script( 'skripte', get_stylesheet_directory_uri() . '/js/skripte.js', array(), $the_theme->get( 'Version' ), true );
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
@@ -56,22 +56,22 @@ add_filter('the_tags','add_class_the_tags');
 
 //add new unicorn post type
 
- if ( ! function_exists('better_unicorn') ) {
+ if ( ! function_exists('news') ) {
 
 // Register Custom Post Type
-function better_unicorn() {
+function news() {
 
     $labels = array(
-        'name'                  => _x( 'better_unicorns', 'Post Type General Name', 'text_domain' ),
-        'singular_name'         => _x( 'better_unicorn', 'Post Type Singular Name', 'text_domain' ),
-        'menu_name'             => __( 'better unicorn', 'text_domain' ),
-        'name_admin_bar'        => __( 'New unicorns', 'text_domain' ),
+        'name'                  => _x( 'news', 'Post Type General Name', 'text_domain' ),
+        'singular_name'         => _x( 'add new news', 'Post Type Singular Name', 'text_domain' ),
+        'menu_name'             => __( 'news', 'text_domain' ),
+        'name_admin_bar'        => __( 'New news', 'text_domain' ),
         'archives'              => __( 'Item Archives', 'text_domain' ),
         'attributes'            => __( 'Item Attributes', 'text_domain' ),
         'parent_item_colon'     => __( 'Parent Item:', 'text_domain' ),
         'all_items'             => __( 'All Items', 'text_domain' ),
         'add_new_item'          => __( 'Add New Item', 'text_domain' ),
-        'add_new'               => __( 'Add New unicorn', 'text_domain' ),
+        'add_new'               => __( 'Add New news', 'text_domain' ),
         'new_item'              => __( 'New Item', 'text_domain' ),
         'edit_item'             => __( 'Edit Item', 'text_domain' ),
         'update_item'           => __( 'Update Item', 'text_domain' ),
@@ -91,8 +91,8 @@ function better_unicorn() {
         'filter_items_list'     => __( 'Filter items list', 'text_domain' ),
     );
     $args = array(
-        'label'                 => __( 'better_unicorn', 'text_domain' ),
-        'description'           => __( 'better_unicorn', 'text_domain' ),
+        'label'                 => __( 'news', 'text_domain' ),
+        'description'           => __( 'news', 'text_domain' ),
         'labels'                => $labels,
         'supports'              => array( 'title', 'editor' ),
         'taxonomies'            => array( 'category', 'post_tag' ),
@@ -109,10 +109,10 @@ function better_unicorn() {
         'publicly_queryable'    => true,
         'capability_type'       => 'page',
     );
-    register_post_type( 'better_unicorn', $args );
+    register_post_type( 'news', $args );
 
 }
-add_action( 'init', 'better_unicorn', 0 );
+add_action( 'init', 'news', 0 );
 
 } 
 
@@ -127,10 +127,9 @@ function my_blockquote($atts, $content) {
 }      
 
 // Send Gill to get paint
-add_action( 'loop_start' , 'send_gill_to_get_paint', 10 , 2 );
+/*add_action( 'loop_start' , 'send_gill_to_get_paint', 10 , 2 );
 function send_gill_to_get_paint(  ) {
-  // If $gill_has_keys and $gill_has_car are both true
-  
+
     echo 'Gill, please go to the store and get some paint. Thank you!';
   
-}
+}*/

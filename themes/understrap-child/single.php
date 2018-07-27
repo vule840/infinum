@@ -54,10 +54,31 @@ $container   = get_theme_mod( 'understrap_container_type' );
 				<?php endwhile; // end of the loop. ?>
 
 			</main><!-- #main -->
-			<div id="magic" class="kontejner2 text-center my-5 ">
-				<button type="button" class="btn btn-primary">More magic</button>
+
+
+<?php get_template_part( 'page-templates/loadmore' ); ?>
+
+			
+
+			<!--  --><div class="test_apend">
+				
 			</div>
 			
+
+		<div class="owl-carousel owl-theme">
+   <!-- <div class="item"><h4>1sdfs</h4></div>
+    <div class="item"><h4>2dfsd</h4></div> --> 
+   <!-- <div class="item"><h4>3fsd</h4></div>
+    <div class="item"><h4>4f</h4></div>
+    <div class="item"><h4>5sdfsd</h4></div>
+    <div class="item"><h4>6</h4></div>
+    <div class="item"><h4>7</h4></div>
+    <div class="item"><h4>8</h4></div>
+    <div class="item"><h4>9</h4></div>
+    <div class="item"><h4>10</h4></div>
+    <div class="item"><h4>11</h4></div>
+    <div class="item"><h4>12</h4></div> --> 
+</div>
 
 	</div><!-- .row -->
 
