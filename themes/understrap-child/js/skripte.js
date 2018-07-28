@@ -113,7 +113,7 @@ jQuery(document).ready(function( $ ) {
     e.preventDefault();
     $.ajax({
       type: "GET",
-      url: "http://localhost/nivas/wp-json/wp/v2/posts/",
+      url: "http://testiranje7777.tk/wp-json/wp/v2/posts/",
      
       success: function(result){
                console.log(result);

@@ -73,11 +73,11 @@ Tasks:
 
 Bonus points:
 ● Boilerplate for plugin.
----------- za news
+*  za news
 ● Use Wordpress Ajax.
----------- ima u js/skripta.js
+*  ima u js/skripta.js, e tu sam dodao one fondove, oni su na testiranju da uzme nek pravi link a ne localhost, i da možda sam trebao neke slike dohvatiti, ali eto nije teško to izmjeniti
 ● load more should be reusable on other listings.
----------- jesam ima u page-templates/loadmore.php, to je taj gumb magic za lodanje id-ova preko API-ja od wp-a
+*  jesam ima u page-templates/loadmore.php, to je taj gumb magic za lodanje id-ova preko API-ja od wp-a
 
 ////Dolje su intrukcije za taj understrap
 
