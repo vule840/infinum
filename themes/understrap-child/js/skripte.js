@@ -113,7 +113,7 @@ jQuery(document).ready(function( $ ) {
     e.preventDefault();
     $.ajax({
       type: "GET",
-      url: "http://localhost/fondovi.hr/wp-json/wp/v2/posts/",
+      url: "http://localhost/nivas/wp-json/wp/v2/posts/",
      
       success: function(result){
                console.log(result);

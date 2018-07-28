@@ -1,3 +1,66 @@
+NIVAS - Wordpress Task
+Instructions:
+● Use the latest version of Wordpress.
+- jesam
+● The database must have a custom prefix.
+-ok
+● You must use version control (the more commits, the better). - Use git/bitbucket.
+-
+● Only submit your work - not all of the Wordpress files.
+- stavio sam wp-content
+● All custom features must be inside a project specific plugin.
+-stavio sam news custom post u news plugin
+
+Before submitting:
+● Add the database dump to the root of the project.
+-ok
+● Merge everything into master and tag version 1.0.
+-ok
+● Send us the link to your repo.
+-ok
+
+Tasks:
+1. Edit wp-config to support a different environment
+	a. Be able to use the same wp-config to add credentials for development, staging and 	production.
+	- to baš nisam radio, znam ima dosta resursa na netu kao
+	https://github.com/studio24/wordpress-multi-env-config/blob/master/wp-config.load.php
+	- uglavnom par domena za različite vrste faze, development, staging, default
+2. Create a Theme
+-koristim understrap framework https://understrap.com/, ali je blank tema bila
+3. Slice and implement the provided design
+-ok
+a. Use your best judgement to decide on what is the content, and what are other
+- k
+stuff like widgets quotes, and how it will be best to implement them so that the editor can make changes.
+4. Implement the design inside a custom post type - News
+- to je išlo u plguins
+a. Don’t use default posts from Wordpress; use custom!
+- defultni su na homepage a  meniju je straktura news/category ...., kao broj 4.c
+b. Create a custom taxonomy for the news post type
+- custom taxonomy category
+c. Create the URL structure:
+	i. /news/category-name/ (Top Category)
+	ii. /news/category-name/sub-category-name/ (Sub Category)
+	iii. /news/category-name/sub-category-name/product-name/ (Single Page)
+	iv. /news/ (Display all news,categories and subcategories)
+	- u meniju sam stavio strukturu, nažalost nisam mogao do levela 3 jer je boostrap nawalker pa bi trebap modificirati cijeli ili ga zamjeniti, ali ima opcija samo nisam stigao
+5. Custom Ajax listing
+	a. On the listing page, use swipe pagination with load more via Ajax.
+	- neznam gdje bi bio listing page ali stavio sam ispod svakog sinle posta ima magi button koji dohvaća postove ajaxom, slike. Htio sam da dohvaća sliku po sliku ali eto, nisam imao petlje :)
+	b. It should be loaded via action_hooks.
+	- lodano preko action enque scripts standardna akcija za lodanje skripti i css-a u funkcijama functions.php
+
+Bonus points:
+● Boilerplate for plugin.
+- za news
+● Use Wordpress Ajax.
+- ima u js/skripta.js
+● load more should be reusable on other listings.
+- jesam ima u page-templates/loadmore.php, to je taj gumb magic za lodanje id-ova preko API-ja od wp-a
+
+
+////Dolje su intrukcije za taj understrap
+
 # understrap-child
 Basic Child Theme for UnderStrap Theme Framework: https://github.com/holger1411/understrap
 
